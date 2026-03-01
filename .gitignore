@@ -1,0 +1,40 @@
+# --- Python / Django ---
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+.venv/
+env/
+venv/
+db.sqlite3
+media/
+staticfiles/
+
+# --- Node.js / React (Vite) ---
+node_modules/
+dist/
+dist-ssr/
+*.local
+.eslintcache
+
+# --- Logs y Debug ---
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.next/
+.serverless/
+
+# --- Sistema y Editores ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# --- Termux / Android ---
+.termux/
+.bash_history
+

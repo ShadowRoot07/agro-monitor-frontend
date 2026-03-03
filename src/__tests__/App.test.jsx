@@ -5,6 +5,18 @@ import App from '../App';
 import api from '../api';
 
 // 1. Simulamos la API para no hacer peticiones reales
+vi.mock('recharts', () => ({
+  ResponsiveContainer: ({ children }) => <div>{children}</div>,
+  AreaChart: ({ children }) => <div>{children}</div>,
+  Area: () => <div></div>,
+  XAxis: () => <div></div>,
+  YAxis: () => <div></div>,
+  CartesianGrid: () => <div></div>,
+  Tooltip: () => <div></div>,
+}));
+
+
+// Mock de la API
 vi.mock('../api');
 
 // 2. Configuramos un QueryClient limpio para cada test

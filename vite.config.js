@@ -7,9 +7,12 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
-    setupFiles: './src/setupTests.js',
-    deps: {
-      inline: ['@tanstack/react-query'],
-    },
+    setupFiles: './src/setupTests.jsx',
+    server: {
+      deps: {
+        inline: ['@tanstack/react-query', 'recharts'],
+      }
+    }
   },
 })
+

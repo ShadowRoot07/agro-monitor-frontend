@@ -33,8 +33,6 @@ const LocationCard = ({ loc }) => {
 
   if (!lastReading) return null;
 
-  console.log(history.slice(-2))
-
   return (
     <div className="bg-slate-900 border border-slate-800 rounded-3xl p-5 mb-6 shadow-xl transition-all hover:border-emerald-500/30">
       <div className="flex justify-between items-center mb-4">
@@ -45,14 +43,14 @@ const LocationCard = ({ loc }) => {
       {/* Datos en tiempo real desde el Backend */}
       <GeoWidget lat={loc.latitude} lon={loc.longitude} name={loc.name} />
 
-      <AgroAlert 
-        temp={lastReading.temp} 
-        humidity={lastReading.humidity} 
+      <AgroAlert
+        temp={lastReading.temp}
+        humidity={lastReading.humidity}
       />
 
-      <VpdWidget 
-        temp={lastReading.temp} 
-        humidity={lastReading.humidity} 
+      <VpdWidget
+        temp={lastReading.temp}
+        humidity={lastReading.humidity}
       />
 
       <div className="mt-8">
@@ -60,10 +58,11 @@ const LocationCard = ({ loc }) => {
           <p className="text-slate-500 text-[10px] uppercase tracking-widest font-bold">
             Analytics Engine
           </p>
-          
+
           {/* Botón de exportación con datos reales */}
           <ExportButton data={history} locationName={loc.name} />
         </div>
+      </div> {/* <-- FALTA CIERRE AQUÍ */}
 
       <div className="mt-4">
         <div className="flex justify-between items-end mb-2">
@@ -74,7 +73,7 @@ const LocationCard = ({ loc }) => {
             {lastReading.temp}°C
           </span>
         </div>
-        
+
         {/* Gráfica con datos reales de la BD */}
         <WeatherChart data={weatherHistory || []} />
       </div>
